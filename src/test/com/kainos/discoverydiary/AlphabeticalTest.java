@@ -8,9 +8,6 @@ import com.kainos.discoverydiary.views.Homepage;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by eamonc on 04/11/2016.
- */
 public class AlphabeticalTest {
 
     @Test
