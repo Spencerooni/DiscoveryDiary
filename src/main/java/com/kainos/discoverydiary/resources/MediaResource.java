@@ -6,7 +6,6 @@ import com.kainos.discoverydiary.models.Media;
 import com.kainos.discoverydiary.models.Status;
 import com.kainos.discoverydiary.views.Detail;
 import io.dropwizard.views.View;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
