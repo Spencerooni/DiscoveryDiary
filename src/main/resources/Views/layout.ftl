@@ -25,7 +25,8 @@
     	<div class="container">
         	<div class="row">
             	<div class="col-lg-4 col-sm-4 col-md-4 logo" >
-                	<a href="#"><img src="/assets/images/logo.png" alt="logo" height="75" style="padding:20px"></a>
+                	<a href="/media"><img src="/assets/images/logo.png" alt="logo" height="75" style="padding:20px"></a>
+                	<a href="/media/add"><img src="/assets/images/addIcon.png" alt="addbOOK" height="20" style="padding:20px"></a>
                 </div>
             </div>
         </div>

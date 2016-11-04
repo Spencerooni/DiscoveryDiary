@@ -2,8 +2,10 @@ package com.kainos.discoverydiary.resources;
 
 import com.codahale.metrics.annotation.Timed;
 import com.kainos.discoverydiary.DataStore;
+import com.kainos.discoverydiary.models.Category;
 import com.kainos.discoverydiary.models.Media;
 import com.kainos.discoverydiary.models.Status;
+import com.kainos.discoverydiary.views.Add;
 import com.kainos.discoverydiary.views.Detail;
 import com.kainos.discoverydiary.views.Homepage;
 import io.dropwizard.views.View;
@@ -67,6 +69,23 @@ public class MediaResource {
 
     @GET
     @Timed
+    @Path("add")
+    @Produces(MediaType.TEXT_HTML)
+    public View Add() {
+        return new Add();
+    }
+    @POST
+    @Timed
+    @Path("add")
+    @Produces(MediaType.TEXT_HTML)
+    public View Add(@FormParam("title") String title, @FormParam("author") String author, @FormParam("description") String description, @FormParam("category") String categoryString, @FormParam("publicationDate") String publicationDate, @FormParam("imageUrl") String imageUrl) {
+        Category category = (categoryString.equals("Technical")) ? Category.TECHNICAL : Category.NON_TECHNICAL;
+        imageUrl = (imageUrl.equals("")) ? "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx" : imageUrl;
+        Media media = new Media(title, author, description, category, publicationDate, imageUrl);
+        DataStore.medias.put(media.getId(), media);
+        return new Add();
+    }
+
     @Path("search")
     public Homepage Search(@QueryParam("searchText") String searchText, @QueryParam("searchOption") String searchOption){
 
@@ -81,7 +100,5 @@ public class MediaResource {
             List<Media> searchList = medias.stream().filter(x -> x.getPublicationDate().equals(searchText)).collect(Collectors.toList());
             return new Homepage(searchList, searchText, searchOption);
         }
-
-
     }
 }
