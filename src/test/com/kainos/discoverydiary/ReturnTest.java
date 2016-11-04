@@ -34,6 +34,6 @@ public class ReturnTest {
         mediaResource.Return(media.getId());
 
         //Assert
-        Assert.assertNotEquals(Status.AVAILABLE, media.getStatus());
+        Assert.assertNotEquals(Status.ON_LOAN, media.getStatus());
     }
 }
