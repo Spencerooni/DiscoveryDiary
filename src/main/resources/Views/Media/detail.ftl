@@ -38,7 +38,7 @@
         <form action="${media.id}/borrow" method="post">
             <label for="nameOfBorrower">Name: </label>
             <input id="nameOfBorrower" type="text" name="nameOfBorrower">
-            <input type="submit" name="Borrow">
+            <input type="submit" name="Borrow" value="Loan">
         </form>
         </#if>
 </dl>
