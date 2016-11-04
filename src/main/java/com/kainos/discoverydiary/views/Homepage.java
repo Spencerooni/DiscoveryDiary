@@ -16,9 +16,37 @@ import java.util.List;
 
     private int bookCount;
 
+    public void setUserSearchText(String userSearchText) {
+        this.userSearchText = userSearchText;
+    }
+
+    public String getUserSearchText() {
+        return userSearchText;
+    }
+
+    private String userSearchText;
+
+    public String getUserDropDown() {
+        return userDropDown;
+    }
+
+    public void setUserDropDown(String userDropDown) {
+        this.userDropDown = userDropDown;
+    }
+
+    private String userDropDown;
+
     public Homepage(List<Media> medias) {
         super("/Views/Media/homepage.ftl");
         this.medias = medias;
+
+    }
+
+    public Homepage(List<Media> medias, String userSearchText, String userDropDown) {
+        super("/Views/Media/homepage.ftl");
+        this.medias = medias;
+        this.userSearchText = userSearchText;
+        this.userDropDown = userDropDown;
 
     }
 
@@ -29,6 +57,8 @@ import java.util.List;
     public int getMediaCount() {
         return medias.size();
     }
+
+
 
 
 }
