@@ -9,6 +9,7 @@ import io.dropwizard.views.View;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("media")
 public class MediaResource {
@@ -28,8 +29,8 @@ public class MediaResource {
 
     @POST
     @Timed
-    @Path("{id}")
-    public View Borrow(@PathParam("id") int id, @FormParam("nameOfBorrower") String nameOfBorrower) {
+    @Path("{id}/borrow")
+    public Response Borrow(@PathParam("id") int id, @FormParam("nameOfBorrower") String nameOfBorrower) {
 
         Media media = DataStore.medias.get(id);
 
@@ -38,7 +39,7 @@ public class MediaResource {
             media.setStatus(Status.ON_LOAN);
         }
 
-        return Detail(id);
+        return Response.ok().entity(Detail(id)).build();
     }
 
     @POST
