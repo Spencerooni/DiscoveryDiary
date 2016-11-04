@@ -37,7 +37,7 @@
         <#if media.status == "Available">
         <form action="${media.id}/borrow" method="post">
             <label for="nameOfBorrower">Name: </label>
-            <input id="nameOfBorrower" type="text" name="nameOfBorrower">
+            <input id="nameOfBorrower" type="text" name="nameOfBorrower" required>
             <input type="submit" name="Borrow" value="Loan">
         </form>
         </#if>
