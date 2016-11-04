@@ -30,8 +30,6 @@
         <dt>Loanee</dt>
         <dd>${media.nameOfBorrower}</dd>
         <form action="${media.id}/return" method="post">
-               <input type="submit" name="Return" value="Return">
-               </form>
         <label for="location">Return Location: </label>
         <input id="location" type="text" name="location" required placeholder="e.g. Belfast - Room 8">
         <input type="submit" name="Return" value="Return">
