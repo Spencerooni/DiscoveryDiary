@@ -5,11 +5,6 @@ import io.dropwizard.views.View;
 
 import java.util.List;
 
-/**
- * Created by benl on 03/11/2016.
- */
-
-
     public class Homepage extends View {
 
     private final List<Media> medias;
@@ -19,7 +14,6 @@ import java.util.List;
     public Homepage(List<Media> medias) {
         super("/Views/Media/homepage.ftl");
         this.medias = medias;
-
     }
 
     public List<Media> getMedias() {
@@ -29,6 +23,4 @@ import java.util.List;
     public int getMediaCount() {
         return medias.size();
     }
-
-
 }
