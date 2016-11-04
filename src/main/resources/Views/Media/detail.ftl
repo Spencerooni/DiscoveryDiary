@@ -30,6 +30,10 @@
         <dt>Loanee</dt>
         <dd>${media.nameOfBorrower}</dd>
         </#if>
+        <#if media.status != "On Loan">
+        <dt>Location</dt>
+        <dd>${media.location}</dd>
+        </#if>
         <#if media.status == "Available">
         <form action="${media.id}/borrow" method="post">
             <label for="nameOfBorrower">Name: </label>

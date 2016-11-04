@@ -13,14 +13,18 @@ public class Media  implements Comparable<Media> {
     private String imageUrl;
     private String nameOfBorrower;
     private Status status;
+    private String location;
 
     private static int count = 0;
+
+
 
 
     public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status, String imageUrl) {
         this(title, author, description, category, publicationDate, imageUrl);
         this.nameOfBorrower = nameOfBorrower;
         this.status = status;
+        this.location = "Belfast";
     }
 
 
@@ -34,12 +38,18 @@ public class Media  implements Comparable<Media> {
         this.category = category;
         this.publicationDate = publicationDate;
         this.imageUrl = imageUrl;
-
         this.status = Status.AVAILABLE;
+        this.location = "Belfast";
 
     }
 
-    public int getId() {
+    public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status, String imageUrl, String location) {
+        this(title, author, description, category, publicationDate, nameOfBorrower, status, imageUrl);
+        this.location = location;
+    }
+
+
+        public int getId() {
         return id;
     }
 
@@ -63,7 +73,6 @@ public class Media  implements Comparable<Media> {
         return publicationDate;
     }
 
-
     public String getImageUrl() {
         return imageUrl;
     }
@@ -71,7 +80,6 @@ public class Media  implements Comparable<Media> {
     public static int getCount() {
         return count;
     }
-
 
     @Override
     public int compareTo(Media o) {
@@ -92,5 +100,13 @@ public class Media  implements Comparable<Media> {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
