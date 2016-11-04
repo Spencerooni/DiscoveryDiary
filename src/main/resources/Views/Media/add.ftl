@@ -34,7 +34,6 @@
             </div>
 
     <input type="submit" value="Confirm" class="btn btn-primary" />
-    <a class="btn btn-default" href="/people">Cancel</a>
 </form>
 
 </@layoutTemplate.layout>
