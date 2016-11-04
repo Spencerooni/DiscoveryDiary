@@ -12,6 +12,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Path("media")
@@ -22,6 +24,7 @@ public class MediaResource {
     @Produces(MediaType.TEXT_HTML)
     public View Homepage() {
         List<Media> medias = new ArrayList<Media>(DataStore.medias.values());
+        Collections.sort(medias);
         return new Homepage(medias);
     }
 
