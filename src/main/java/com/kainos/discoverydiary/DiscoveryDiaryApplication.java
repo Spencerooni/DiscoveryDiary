@@ -3,7 +3,6 @@ package com.kainos.discoverydiary;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.models.Category;
 import com.kainos.discoverydiary.models.Media;
-import com.kainos.discoverydiary.models.Status;
 import com.kainos.discoverydiary.resources.MediaResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
