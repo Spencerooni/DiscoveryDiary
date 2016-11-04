@@ -2,14 +2,6 @@
 
 <@layoutTemplate.layout>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Media</title>
-</head>
-<body>
-
 <form method="post">
     <div class="form-group">
         <label for="title">Title</label>
@@ -44,8 +36,5 @@
     <input type="submit" value="Confirm" class="btn btn-primary" />
     <a class="btn btn-default" href="/people">Cancel</a>
 </form>
-
-</body>
-</html>
 
 </@layoutTemplate.layout>
