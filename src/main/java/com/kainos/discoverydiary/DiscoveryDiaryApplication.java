@@ -5,6 +5,7 @@ import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.models.Category;
 import com.kainos.discoverydiary.models.Media;
 import com.kainos.discoverydiary.models.Status;
+import com.kainos.discoverydiary.resources.HomeResource;
 import com.kainos.discoverydiary.resources.MediaResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
@@ -23,7 +24,9 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
 
     public void run(DiscoveryDiaryConfiguration discoveryDiaryConfiguration, Environment environment) throws Exception {
         final MediaResource mediaResource = new MediaResource();
+        final HomeResource homeResource = new HomeResource();
         environment.jersey().register(mediaResource);
+        environment.jersey().register(homeResource);
         addDummyData();
     }
 

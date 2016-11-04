@@ -1,5 +1,6 @@
 package com.kainos.discoverydiary;
 
+import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.models.Category;
 import com.kainos.discoverydiary.models.Media;
 import com.kainos.discoverydiary.models.Status;
@@ -36,5 +37,4 @@ public class BorrowTest {
         //Assert
         Assert.assertNotEquals("NewBorrower", media.getNameOfBorrower());
     }
-
 }
