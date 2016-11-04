@@ -22,7 +22,7 @@ public class MediaResource {
     @GET
     @Timed
     @Produces(MediaType.TEXT_HTML)
-    public View Homepage() {
+    public Homepage Homepage() {
         List<Media> medias = new ArrayList<Media>(DataStore.medias.values());
         Collections.sort(medias);
         return new Homepage(medias);
