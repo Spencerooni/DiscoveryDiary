@@ -31,6 +31,24 @@
             </div>
         </div>
     </header>
+<section class="search-bar-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div class="search-area">
+                    <form action="/media/search" method="get">
+                        <input name="searchText" value="${userSearchText!}" type="text" placeholder="Search by Title, Author or Location">
+                          <input type="submit" value="Search" class="search">
+                     <select name="searchOption" value="${userDropDown!}" class="selectpicker">
+                                                  <option value ="Title" <#if userDropDown! == "Title">selected</#if>>Title</option>
+                                                  <option value ="Year" <#if userDropDown! == "Year">selected</#if>>Year</option>
+                      </select>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
 
 
 
