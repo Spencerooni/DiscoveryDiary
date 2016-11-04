@@ -5,6 +5,7 @@ import com.kainos.discoverydiary.models.Media;
 import com.kainos.discoverydiary.resources.MediaResource;
 import com.kainos.discoverydiary.views.Homepage;
 import io.dropwizard.views.View;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,14 +21,6 @@ public class SearchTest {
         DataStore.medias.clear();
         DiscoveryDiaryApplication.addDummyData();
 
-    }
-
-    @Test
-    public void searchShouldReturnResultForCorrectTitle() {
-
-        MediaResource mediaResource = new MediaResource();
-        Homepage searchView = mediaResource.Search("Ben", "Title");
-        Assert.assertEquals(searchView.getMedias().size(), 1);
     }
 
     @Test
@@ -59,6 +52,6 @@ public class SearchTest {
 
         MediaResource mediaResource = new MediaResource();
         Homepage searchView = mediaResource.Search("", "Title");
-        Assert.assertEquals(searchView.getMedias().size(), 6);
+        Assert.assertEquals(searchView.getMedias().size(), 5);
     }
 }
