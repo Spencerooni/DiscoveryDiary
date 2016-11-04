@@ -33,7 +33,7 @@
                <input type="submit" name="Return" value="Return">
                </form>
 
-         </#if>
+        </#if>
         <#if media.status == "Available">
         <form action="${media.id}/borrow" method="post">
             <label for="nameOfBorrower">Name: </label>
