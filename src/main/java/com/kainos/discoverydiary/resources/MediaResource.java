@@ -5,17 +5,23 @@ import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.models.Media;
 import com.kainos.discoverydiary.models.Status;
 import com.kainos.discoverydiary.views.Detail;
+import com.kainos.discoverydiary.views.Homepage;
 import io.dropwizard.views.View;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
+import java.util.List;
 
 @Path("Media")
 public class MediaResource {
 
-    public MediaResource() {
-        //Dummy Data
-
+    @GET
+    @Timed
+    @Produces(MediaType.TEXT_HTML)
+    public View Homepage() {
+        List<Media> medias = new ArrayList<Media>(DataStore.medias.values());
+        return new Homepage(medias);
     }
 
     @GET

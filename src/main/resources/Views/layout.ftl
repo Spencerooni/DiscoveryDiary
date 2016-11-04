@@ -7,29 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap -->
+
     <title>Kainos Media Library</title>
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/styles.css" rel="stylesheet">
+      <!-- Bootstrap core CSS -->
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+         <link href="/assets/css/layout.css" rel="stylesheet">
+         <link href="/assets/css/responsive.css" rel="stylesheet">
+         <link href="/assets/fonts/fonts.css" rel="stylesheet">
+
+
   </head>
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/home">Kainos Media Library</a>
+	<header>
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-lg-4 col-sm-4 col-md-4 logo" >
+                	<a href="#"><img src="/assets/images/logo.png" alt="logo" height="75" style="padding:20px"></a>
+                </div>
+            </div>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    </header>
+
+
 
     <div class="container">
 

@@ -5,6 +5,8 @@
 <h1>${media.title}</h1>
 
 <dl class="table">
+
+<img src="${media.imageUrl}" alt="${media.title} image" height="200px">
         <dt>Author</dt>
         <dd>
             ${media.author}

@@ -1,8 +1,6 @@
 package com.kainos.discoverydiary;
 
 import com.kainos.discoverydiary.models.Media;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+header{ width:100%; clear:both; overflow:hidden; margin:0; padding:0;}
+header .logo a{ display:block; float:left; margin:0 0;}
+
+.search-bar-area{width:100%; clear:both; overflow:hidden; margin:0; padding:0; background:#192f56;}
+.search-area { float: right; overflow: hidden; padding: 10px 0;width: 435px;}
+.search-area input{ width:330px; margin:0; padding:0 10px; font-size:14px; color:#000; height:36px; background:#fff; float:left; border:none;}
+.search-area input.search{ width:100px; margin:0 0 0 5px; padding:0 10px; font-size:16px; color:#fff; height:36px; background:#5bb85c; float:left; border:1px solid #359636;}
+
+
+.main-content-area{ width:100%; clear:both; overflow:hidden; margin:0; padding:35px 0;}
+.box-inner{background-color: #fff;box-shadow: 0 0 6px #9c9c9c;margin: 15px 0;padding: 10px;}
+.img-con {clear: both;display: table;height: 315px;overflow: hidden;position: relative;text-align: center;vertical-align: middle;width: 100%;}
+.img-con a {display: table-cell;text-align: center;vertical-align: middle;width: 100%;}
+.img-con img {display: table-cell;margin: 0 auto;width: 100%;height:310px;}
+.details-area h1{ margin:0; padding:0; height:50px; overflow:hidden;}
+.details-area h1 a {color: #192f56;display: block;font-size: 18px;margin: 10px 0 5px;text-decoration:none;}
+.details-area span{color: #6e6e6e;display: block;font-size: 12px;}
+
+.top-title{ width:100%; clear:both; overflow:hidden; position:absolute; top:0; left:0; z-index:999;}
+.top-title span{ display:block; width:100px; margin:0 auto; background:#000; color:#fff; text-align:center; font-size:12px; padding:7px ; border:1px solid #ccc; border-top:none;}
