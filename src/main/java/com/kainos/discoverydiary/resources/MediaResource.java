@@ -14,6 +14,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Path("media")
 public class MediaResource {
@@ -61,6 +62,26 @@ public class MediaResource {
             media.setLocation(location);
         }
         return Response.seeOther(new URI("/media/" + id)).entity(Detail(id)).build();
+
+    }
+
+    @GET
+    @Timed
+    @Path("search")
+    public Homepage Search(@QueryParam("searchText") String searchText, @QueryParam("searchOption") String searchOption){
+
+        List<Media> medias = new ArrayList<Media>(DataStore.medias.values());
+
+        if(searchOption.equals("Title")) {
+
+            List<Media> searchList = medias.stream().filter(x -> x.getTitle().toLowerCase().contains(searchText.toLowerCase())).collect(Collectors.toList());
+            return new Homepage(searchList, searchText, searchOption);
+
+        } else {
+            List<Media> searchList = medias.stream().filter(x -> x.getPublicationDate().equals(searchText)).collect(Collectors.toList());
+            return new Homepage(searchList, searchText, searchOption);
+        }
+
 
     }
 }
