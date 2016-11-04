@@ -2,8 +2,6 @@ package com.kainos.discoverydiary.models;
 
 public class Media  implements Comparable<Media> {
 
-
-
     private int id;
     private String title;
     private String author;
@@ -13,16 +11,13 @@ public class Media  implements Comparable<Media> {
     private String imageUrl;
     private String nameOfBorrower;
     private Status status;
-
     private static int count = 0;
-
 
     public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status, String imageUrl) {
         this(title, author, description, category, publicationDate, imageUrl);
         this.nameOfBorrower = nameOfBorrower;
         this.status = status;
     }
-
 
     public Media(String title, String author, String description, Category category, String publicationDate, String imageUrl){
 
@@ -34,7 +29,6 @@ public class Media  implements Comparable<Media> {
         this.category = category;
         this.publicationDate = publicationDate;
         this.imageUrl = imageUrl;
-
         this.status = Status.AVAILABLE;
 
     }
@@ -71,7 +65,6 @@ public class Media  implements Comparable<Media> {
     public static int getCount() {
         return count;
     }
-
 
     @Override
     public int compareTo(Media o) {

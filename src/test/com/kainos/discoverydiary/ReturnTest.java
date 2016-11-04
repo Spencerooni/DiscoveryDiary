@@ -9,7 +9,6 @@ import org.junit.Test;
 
 public class ReturnTest {
 
-
     @Test
     public void shouldReturnBook() throws Exception{
         //Arrange
