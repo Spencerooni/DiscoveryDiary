@@ -85,7 +85,7 @@ public class MediaResource {
         DataStore.medias.put(media.getId(), media);
         return new Add();
     }
-
+    @GET
     @Path("search")
     public Homepage Search(@QueryParam("searchText") String searchText, @QueryParam("searchOption") String searchOption){
 
