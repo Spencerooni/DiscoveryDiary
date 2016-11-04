@@ -40,4 +40,18 @@ public class MediaResource {
 
         return Detail(id);
     }
+
+    @POST
+    @Timed
+    @Path("{id}/return")
+    public View Return(@PathParam("id") int id) {
+
+        Media media = DataStore.medias.get(id);
+
+        if (media.getStatus() == Status.ON_LOAN) {
+            media.setStatus(Status.AVAILABLE);
+        }
+
+        return Detail(id);
+    }
 }

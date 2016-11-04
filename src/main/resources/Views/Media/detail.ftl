@@ -28,6 +28,13 @@
         <#if media.status == "On Loan">
         <dt>Loanee</dt>
         <dd>${media.nameOfBorrower}</dd>
+
+        <form action="${media.id}/return" method="post">
+               <input type="submit" name="Return" value="Return">
+               </form>
+
+         </#if>
+
         <#if media.status == "Available">
         <form method="post">
             <label for="nameOfBorrower">Name: </label>
