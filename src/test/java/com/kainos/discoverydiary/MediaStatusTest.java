@@ -1,5 +1,6 @@
 package com.kainos.discoverydiary;
 
+import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.models.Category;
 import com.kainos.discoverydiary.models.Media;
 import com.kainos.discoverydiary.models.Status;
@@ -7,9 +8,6 @@ import com.kainos.discoverydiary.resources.MediaResource;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by aoifeg on 04/11/2016.
- */
 public class MediaStatusTest {
     @Test
     public void ifMediaAvailableShowStatus() {
