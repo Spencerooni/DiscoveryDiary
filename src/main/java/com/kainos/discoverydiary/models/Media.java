@@ -11,6 +11,7 @@ public class Media  implements Comparable<Media> {
     private String imageUrl;
     private String nameOfBorrower;
     private Status status;
+    private String location;
     private static int count = 0;
 
     public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status, String imageUrl) {
@@ -18,6 +19,7 @@ public class Media  implements Comparable<Media> {
         this.nameOfBorrower = nameOfBorrower;
         this.status = status;
         this.imageUrl = imageUrl;
+        this.location = "Belfast";
     }
 
     public Media(String title, String author, String description, Category category, String publicationDate){
@@ -41,9 +43,16 @@ public class Media  implements Comparable<Media> {
         this.imageUrl = "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx";
         this.imageUrl = imageUrl;
         this.status = Status.AVAILABLE;
+        this.location = "Belfast";
     }
 
-    public int getId() {
+    public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status, String imageUrl, String location) {
+        this(title, author, description, category, publicationDate, nameOfBorrower, status, imageUrl);
+        this.location = location;
+    }
+
+
+        public int getId() {
         return id;
     }
 
@@ -66,7 +75,6 @@ public class Media  implements Comparable<Media> {
     public String getPublicationDate() {
         return publicationDate;
     }
-
 
     public String getImageUrl() {
         return imageUrl;
@@ -95,5 +103,13 @@ public class Media  implements Comparable<Media> {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

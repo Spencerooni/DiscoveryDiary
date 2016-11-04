@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Path("media")
@@ -20,8 +21,9 @@ public class MediaResource {
     @GET
     @Timed
     @Produces(MediaType.TEXT_HTML)
-    public View Homepage() {
+    public Homepage Homepage() {
         List<Media> medias = new ArrayList<Media>(DataStore.medias.values());
+        Collections.sort(medias);
         return new Homepage(medias);
     }
 
@@ -50,12 +52,13 @@ public class MediaResource {
     @POST
     @Timed
     @Path("{id}/return")
-    public Response Return(@PathParam("id") int id) throws Exception {
+    public Response Return(@PathParam("id") int id, @FormParam("location") String location) throws Exception {
 
         Media media = DataStore.medias.get(id);
 
         if (media.getStatus() == Status.ON_LOAN) {
             media.setStatus(Status.AVAILABLE);
+            media.setLocation(location);
         }
         return Response.seeOther(new URI("/media/" + id)).entity(Detail(id)).build();
 
