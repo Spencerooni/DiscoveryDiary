@@ -30,15 +30,20 @@
         <dt>Loanee</dt>
         <dd>${media.nameOfBorrower}</dd>
         <form action="${media.id}/return" method="post">
-               <input type="submit" name="Return" value="Return">
-               </form>
-
-         </#if>
+        <label for="location">Return Location: </label>
+        <input id="location" type="text" name="location" required placeholder="e.g. Belfast - Room 8">
+        <input type="submit" name="Return" value="Return">
+        </form>
+        </#if>
+        <#if media.status != "On Loan">
+        <dt>Location</dt>
+        <dd>${media.location}</dd>
+        </#if>
         <#if media.status == "Available">
         <form action="${media.id}/borrow" method="post">
             <label for="nameOfBorrower">Name: </label>
-            <input id="nameOfBorrower" type="text" name="nameOfBorrower">
-            <input type="submit" name="Borrow">
+            <input id="nameOfBorrower" type="text" name="nameOfBorrower" required>
+            <input type="submit" name="Borrow" value="Loan">
         </form>
         </#if>
 </dl>

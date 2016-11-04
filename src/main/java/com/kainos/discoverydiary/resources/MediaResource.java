@@ -52,12 +52,13 @@ public class MediaResource {
     @POST
     @Timed
     @Path("{id}/return")
-    public Response Return(@PathParam("id") int id) throws Exception {
+    public Response Return(@PathParam("id") int id, @FormParam("location") String location) throws Exception {
 
         Media media = DataStore.medias.get(id);
 
         if (media.getStatus() == Status.ON_LOAN) {
             media.setStatus(Status.AVAILABLE);
+            media.setLocation(location);
         }
         return Response.seeOther(new URI("/media/" + id)).entity(Detail(id)).build();
 
