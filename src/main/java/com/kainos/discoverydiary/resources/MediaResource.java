@@ -10,7 +10,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("media")
+@Path("Media")
 public class MediaResource {
 
     public MediaResource() {
@@ -37,21 +37,19 @@ public class MediaResource {
             media.setNameOfBorrower(nameOfBorrower);
             media.setStatus(Status.ON_LOAN);
         }
-
         return Response.ok().entity(Detail(id)).build();
     }
 
     @POST
     @Timed
     @Path("{id}/return")
-    public View Return(@PathParam("id") int id) {
+    public Response Return(@PathParam("id") int id, @FormParam("nameOfBorrower") String nameOfBorrower) {
 
         Media media = DataStore.medias.get(id);
 
         if (media.getStatus() == Status.ON_LOAN) {
             media.setStatus(Status.AVAILABLE);
         }
-
-        return Detail(id);
+        return Response.ok().entity(Detail(id)).build();
     }
 }
