@@ -1,8 +1,5 @@
 package com.kainos.discoverydiary.models;
 
-/**
- * Created by benl on 03/11/2016.
- */
 public class Media  implements Comparable<Media> {
 
 
@@ -42,7 +39,6 @@ public class Media  implements Comparable<Media> {
         this.status = Status.AVAILABLE;
 
     }
-
 
     public int getId() {
         return id;
@@ -91,6 +87,11 @@ public class Media  implements Comparable<Media> {
         return status;
     }
 
+    public void setNameOfBorrower(String nameOfBorrower) {
+        this.nameOfBorrower = nameOfBorrower;
+    }
 
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }
-

@@ -3,15 +3,14 @@ package com.kainos.discoverydiary.resources;
 import com.codahale.metrics.annotation.Timed;
 import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.models.Media;
+import com.kainos.discoverydiary.models.Status;
 import com.kainos.discoverydiary.views.Detail;
 import com.kainos.discoverydiary.views.Homepage;
 import io.dropwizard.views.View;
-
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,14 +25,26 @@ public class MediaResource {
         return new Homepage(medias);
     }
 
-
     @GET
     @Timed
     @Path("{id}")
     @Produces(MediaType.TEXT_HTML)
     public View Detail(@PathParam("id") int id) {
-
         return new Detail(DataStore.medias.get(id));
     }
-}
 
+    @POST
+    @Timed
+    @Path("{id}/borrow")
+    public Response Borrow(@PathParam("id") int id, @FormParam("nameOfBorrower") String nameOfBorrower) throws Exception {
+
+        Media media = DataStore.medias.get(id);
+
+        if (media.getStatus() == Status.AVAILABLE) {
+            media.setNameOfBorrower(nameOfBorrower);
+            media.setStatus(Status.ON_LOAN);
+        }
+
+        return Response.seeOther(new URI("/media/" + id)).entity(Detail(id)).build();
+    }
+}
