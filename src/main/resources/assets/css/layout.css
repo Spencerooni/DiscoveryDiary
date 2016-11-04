@@ -21,3 +21,23 @@ header .logo a{ display:block; float:left; margin:0 0;}
 
 .top-title{ width:100%; clear:both; overflow:hidden; position:absolute; top:0; left:0; z-index:999;}
 .top-title span{ display:block; width:100px; margin:0 auto; background:#000; color:#fff; text-align:center; font-size:12px; padding:7px ; border:1px solid #ccc; border-top:none;}
+
+.status-icon {
+ margin-top: 20px;
+ }
+
+span.glyphicon {
+    font-size: 30px !Important;
+}
+
+.green {
+    color: green !important;
+}
+
+.red {
+    color: red !important;
+}
+
+.orange {
+    color: orange !important;
+}

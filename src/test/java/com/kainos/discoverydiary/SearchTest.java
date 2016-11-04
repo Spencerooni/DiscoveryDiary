@@ -5,6 +5,7 @@ import com.kainos.discoverydiary.models.Media;
 import com.kainos.discoverydiary.resources.MediaResource;
 import com.kainos.discoverydiary.views.Homepage;
 import io.dropwizard.views.View;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
