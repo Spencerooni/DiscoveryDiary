@@ -23,14 +23,6 @@ public class SearchTest {
     }
 
     @Test
-    public void searchShouldReturnResultForCorrectTitle() {
-
-        MediaResource mediaResource = new MediaResource();
-        Homepage searchView = mediaResource.Search("Ben", "Title");
-        Assert.assertEquals(searchView.getMedias().size(), 1);
-    }
-
-    @Test
     public void searchShouldReturnNothingForIncorrectYear() {
 
         MediaResource mediaResource = new MediaResource();
@@ -59,6 +51,6 @@ public class SearchTest {
 
         MediaResource mediaResource = new MediaResource();
         Homepage searchView = mediaResource.Search("", "Title");
-        Assert.assertEquals(searchView.getMedias().size(), 6);
+        Assert.assertEquals(searchView.getMedias().size(), 5);
     }
 }
