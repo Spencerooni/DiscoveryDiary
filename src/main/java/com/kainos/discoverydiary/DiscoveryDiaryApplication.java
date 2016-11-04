@@ -42,6 +42,9 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         addMedia(new Media("Harry Potter", "J. K. Rowling", "Wizard boy meets girl", Category.NON_TECHNICAL, "2006", "", Status.IN_DISREPAIR, "http://vignette3.wikia.nocookie.net/harrypotter/images/7/7b/Harry01english.jpg/revision/latest?cb=20150208225304"));
         addMedia(new Media("The Big Book of Java", "J. Writer", "Everything you need to know about Java", Category.TECHNICAL, "2015", "Aoífe Gildernew", Status.ON_LOAN, "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx"));
         addMedia(new Media("My Auto Biography", "M. Life", "Everything you need to know about Me", Category.NON_TECHNICAL, "1993", "Eamon Compston", Status.ON_LOAN, "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx"));
+        addMedia(new Media("UNIX System V An introduction", "Kenneth H. Rosen, Richard R. Rosinski, James M. Farber ", "An excellent introduction to AT&T’s Unix System V release", Category.NON_TECHNICAL, "1990", "Sean O'Hara", Status.ON_LOAN, "https://cdn2.kainos.com/wp-content/uploads/2013/11/david-main.jpg?1869db"));
+        addMedia(new Media("Oat So Simple", "Quaker", "9 sachets of porridge", Category.NON_TECHNICAL, "2016", "David Spence", Status.AVAILABLE, "https://www.quaker.co.uk/images/default-source/products/quaker-traditional-oats/quaker-oats-1kg.png?sfvrsn=8"));
+        addMedia(new Media("Ben", "Ben", "Funktion Golf",Category.NON_TECHNICAL,"2008"));
     }
 
     public static void addMedia(Media media) {

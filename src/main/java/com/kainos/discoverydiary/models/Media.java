@@ -15,14 +15,14 @@ public class Media  implements Comparable<Media> {
     private static int count = 0;
 
     public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status, String imageUrl) {
-        this(title, author, description, category, publicationDate, imageUrl);
+        this(title, author, description, category, publicationDate);
         this.nameOfBorrower = nameOfBorrower;
         this.status = status;
+        this.imageUrl = imageUrl;
         this.location = "Belfast";
     }
 
-    public Media(String title, String author, String description, Category category, String publicationDate, String imageUrl){
-
+    public Media(String title, String author, String description, Category category, String publicationDate){
         count++;
         this.id = count;
         this.title = title;
@@ -30,10 +30,20 @@ public class Media  implements Comparable<Media> {
         this.description = description;
         this.category = category;
         this.publicationDate = publicationDate;
+        this.imageUrl = "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx";
+    }
+    public Media(String title, String author, String description, Category category, String publicationDate, String imageUrl){
+        count++;
+        this.id = count;
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.category = category;
+        this.publicationDate = publicationDate;
+        this.imageUrl = "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx";
         this.imageUrl = imageUrl;
         this.status = Status.AVAILABLE;
         this.location = "Belfast";
-
     }
 
     public Media(String title, String author, String description, Category category, String publicationDate, String nameOfBorrower, Status status, String imageUrl, String location) {
@@ -42,7 +52,7 @@ public class Media  implements Comparable<Media> {
     }
 
 
-        public int getId() {
+    public int getId() {
         return id;
     }
 
