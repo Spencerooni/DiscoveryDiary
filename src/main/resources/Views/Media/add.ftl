@@ -20,7 +20,7 @@
 
     <div class="form-group">
             <label for="category">Category</label>
-            <input name="category" type="text" class="form-control" required />
+            <input name="category" placeholder="Technical/Non-Technical" type="text" class="form-control" required />
         </div>
 
     <div class="form-group">
