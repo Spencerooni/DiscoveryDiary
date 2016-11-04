@@ -11,7 +11,6 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +50,7 @@ public class MediaResource {
     @POST
     @Timed
     @Path("{id}/return")
-    public Response Return(@PathParam("id") int id, @FormParam("nameOfBorrower") String nameOfBorrower) throws Exception {
+    public Response Return(@PathParam("id") int id) throws Exception {
 
         Media media = DataStore.medias.get(id);
 

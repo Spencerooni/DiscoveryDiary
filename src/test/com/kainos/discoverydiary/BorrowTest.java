@@ -10,9 +10,9 @@ import org.junit.Test;
 public class BorrowTest {
 
     @Test
-    public void shouldBorrowBook() {
+    public void shouldBorrowBook() throws Exception{
         //Arrange
-        Media media = new Media("Java For Dummies", "J K Bowling", "Training book on java", Category.TECHNICAL, "2001");
+        Media media = new Media("Advances in Relationship Marketing", "Adrian Payne", "Advances in Relationship Marketing by Adrian Payne", Category.TECHNICAL, "1995", "bob", Status.AVAILABLE, "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx");
         DataStore.medias.put(media.getId(), media);
         MediaResource mediaResource = new MediaResource();
 
@@ -25,8 +25,8 @@ public class BorrowTest {
     }
 
     @Test
-    public void shouldNotBorrowBook() {
-        Media media = new Media("Java For Dummies", "J K Bowling", "Training book on java", Category.TECHNICAL, "2001", "Borrower", Status.ON_LOAN);
+    public void shouldNotBorrowBook() throws Exception{
+        Media media = new Media("Advances in Relationship Marketing", "Adrian Payne", "Advances in Relationship Marketing by Adrian Payne", Category.TECHNICAL, "1995", null, Status.ON_LOAN, "https://www.asme.org/getmedia/c2c8ea5a-b690-4ba7-92bb-34bd1432862b/book_guide_hero_books.aspx");
         DataStore.medias.put(media.getId(), media);
         MediaResource mediaResource = new MediaResource();
 
@@ -36,5 +36,4 @@ public class BorrowTest {
         //Assert
         Assert.assertNotEquals("NewBorrower", media.getNameOfBorrower());
     }
-
 }
